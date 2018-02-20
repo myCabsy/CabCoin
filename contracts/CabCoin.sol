@@ -17,7 +17,6 @@ contract MyMath {
     uint constant icoPrice = 2255;
 
     function mulByFraction(uint256 number, uint256 numerator, uint256 denominator) internal returns (uint256) {
-        // warum nicht div??? return div(mul(number, numerator), denominator);
         return div(mul(number, numerator), denominator);
     }
 
@@ -25,7 +24,7 @@ contract MyMath {
     function presaleVolumeBonus(uint256 price) internal returns (uint256) {
 
         // preCTX > ETH
-        // warum nicht div??? uint256 val = div(price, preIcoPrice);
+        uint256 val = div(price, preIcoPrice);
 
         if(val >= 100 * BASE) return add(price, price * 1/20); // 5%
         if(val >= 50 * BASE) return add(price, price * 3/100); // 3%
